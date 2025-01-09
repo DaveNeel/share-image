@@ -13,10 +13,10 @@ export const Home = () => {
             <h1>Share Image Options</h1>
             <div className="options">
                 <div className="option" onClick={() => handleNavigation('share-single-image')}>
-                    Approach 1 :- Share Image Link
+                    Approach 1: Share Image Link
                 </div>
                 <div className="option" onClick={() => handleNavigation('share-multiple-image')}>
-                    Approach 2 :- Share Image File
+                    Approach 2: Share Image File
                 </div>
             </div>
         </div>
