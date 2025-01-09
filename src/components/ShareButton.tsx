@@ -6,8 +6,16 @@ const urlToObject = async (url: string): Promise<File> => {
     if (!response.ok) {
       throw new Error("Failed to fetch image");
     }
+    // const blob = await response.blob();
+    // return new File([blob], "image.jpg", { type: blob.type });
     const blob = await response.blob();
-    return new File([blob], "image.jpg", { type: blob.type });
+    const mimeType = blob.type; 
+    console.log("mimeType:- ",mimeType)
+    const extension = mimeType.split("/")[1]; 
+    console.log("extension:- ",extension)
+    const fileName = `file.${extension}`; // Dynamically set the file name with the correct extension
+    return new File([blob], fileName, { type: mimeType });
+
   } catch (error) {
     console.error("Error converting URL to file:", error);
     throw error;
@@ -47,7 +55,8 @@ const ShareButton: React.FC = () => {
     const imageUrls = [
        'https://res.cloudinary.com/deas6gla3/image/upload/v1736341550/cld-sample-3.jpg',
        'https://res.cloudinary.com/deas6gla3/image/upload/v1736341550/cld-sample-5.jpg',
-       'https://res.cloudinary.com/deas6gla3/image/upload/v1736341550/cld-sample-4.jpg'
+       'https://res.cloudinary.com/deas6gla3/image/upload/v1736341550/cld-sample-4.jpg',
+       'https://jb-glass-webapp2.s3.ap-south-1.amazonaws.com/website/glass-catalogue-assets/decorative/0.jpg'
     ]; // Add more URLs as needed
     const text = "Check out these images!";
     testWebShare(imageUrls, text);
