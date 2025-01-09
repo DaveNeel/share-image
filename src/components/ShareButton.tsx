@@ -56,7 +56,7 @@ const ShareButton: React.FC = () => {
        'https://res.cloudinary.com/deas6gla3/image/upload/v1736341550/cld-sample-3.jpg',
        'https://res.cloudinary.com/deas6gla3/image/upload/v1736341550/cld-sample-5.jpg',
        'https://res.cloudinary.com/deas6gla3/image/upload/v1736341550/cld-sample-4.jpg',
-       'https://jb-glass-webapp2.s3.ap-south-1.amazonaws.com/website/glass-catalogue-assets/decorative/0.jpg'
+       'https://jbglass-stage.s3.ap-south-1.amazonaws.com/jb-library-albums/677f739f9ea1d0c56656aa84/20240516092629-fea32840-cu_e250-1736405926791.jpg'
     ]; // Add more URLs as needed
     const text = "Check out these images!";
     testWebShare(imageUrls, text);
